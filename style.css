@@ -1,13 +1,16 @@
+/* Header style */
 .header {
     font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 24px;
+    padding-right: 56px;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
+    background-color: white;
 }
 
 .nav-option-link {
@@ -23,4 +26,52 @@
     display: flex;
     column-gap: 18px;
     font-size: 18px;
+}
+
+/* main body style*/
+
+.main-body {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+/* postcard style */
+.postcard-animation-container {
+    height: 1125px;
+    width: 1125px;
+    perspective: 1000px;
+}
+
+.postcard-animations {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+}
+
+.postcard-animation-container:hover .postcard-animations{
+    transform: rotateY(-180deg)rotateZ(-90deg);
+}
+
+.front-card,
+.back-card {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    
+}
+
+
+.front-card {
+    background-image: url(images/postcards/grain-full.jpg);
+}
+
+.back-card {
+    background-image: url(images/postcards/grainfull-back.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotateY(180deg);
 }
