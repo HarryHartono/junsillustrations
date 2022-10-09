@@ -29,7 +29,6 @@
 }
 
 /* main body style*/
-
 .main-body {
     margin-top: 100px;
     display: flex;
@@ -60,17 +59,11 @@
     height: 100%;
     width: 100%;
     position: absolute;
-    backface-visibility: hidden;
-    
+    backface-visibility: hidden;    
 }
 
-
-.front-card {
-    background-image: url(images/postcards/grain-full.jpg);
-}
 
 .back-card {
-    background-image: url(images/postcards/grainfull-back.jpg);
     background-repeat: no-repeat;
     background-position: center;
     transform: rotateY(180deg);
