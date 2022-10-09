@@ -11,6 +11,7 @@
     right: 0;
     left: 0;
     background-color: white;
+    z-index: 100;
 }
 
 .nav-option-link {
@@ -33,13 +34,29 @@
     margin-top: 100px;
     display: flex;
     justify-content: center;
+    margin-bottom: 3000px;
 }
 
 /* postcard style */
+@media (hover:hover) {
+    /* this target devices that can hover */
+    .postcard-animation-container:hover .postcard-animations{
+        transform: rotateY(-180deg)rotateZ(-90deg);
+    }
+}
+
+@media (hover:none) {
+    /* touch screen only */
+    .postcard-animation-container:active .postcard-animations{
+        transform: rotateY(-180deg)rotateZ(-90deg);
+    }
+}
 .postcard-animation-container {
-    height: 1125px;
-    width: 1125px;
+    height: 500px;
+    width: 500px;
     perspective: 1000px;
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
 .postcard-animations {
@@ -50,16 +67,18 @@
     transform-style: preserve-3d;
 }
 
-.postcard-animation-container:hover .postcard-animations{
-    transform: rotateY(-180deg)rotateZ(-90deg);
-}
-
 .front-card,
 .back-card {
     height: 100%;
     width: 100%;
     position: absolute;
     backface-visibility: hidden;    
+}
+
+.front-card-img,
+.back-card-img {
+    height: 100%;
+    width: 100%;
 }
 
 
