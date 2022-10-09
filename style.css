@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+}
+
+
 /* Header style */
 .header {
     font-family: 'Poppins', sans-serif;
@@ -14,9 +19,24 @@
     z-index: 100;
 }
 
+.right-side {
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+}
+
+
 .nav-option-link {
     text-decoration: none;
     color: black;
+}
+
+.nav-option-contact {
+    background-color: lightgray;
+    border: 2px solid black;
+    font-size: 22px;
+    padding: 4px 8px;
+    margin-left: 32px;
 }
 
 .logo {
@@ -26,7 +46,6 @@
 .navigation-bar {
     display: flex;
     column-gap: 18px;
-    font-size: 18px;
 }
 
 /* main body style*/
@@ -38,22 +57,6 @@
 }
 
 /* postcard style */
-@media (hover:hover) {
-    /* this target devices that can hover */
-    .postcard-animation-container:hover .postcard-animations{
-        transform: rotateY(-180deg)rotateZ(-90deg);
-    }
-}
-
-@media (hover:none) {
-    /* touch screen only */
-    .postcard-animation-container:hover .postcard-animations{
-        transform: rotateY(-180deg)rotateZ(-90deg);
-    }
-    .back-arrow:hover .postcard-animations{
-        transform: rotateY(180deg)rotateZ(90deg);
-    }
-}
 .postcard-animation-container {
     height: 500px;
     width: 500px;
@@ -68,6 +71,10 @@
     position: relative;
     transition: transform 1500ms;
     transform-style: preserve-3d;
+}
+
+.postcard-animation-container:hover .postcard-animations{
+    transform: rotateY(-180deg)rotateZ(-90deg);
 }
 
 .front-card,
@@ -97,10 +104,40 @@
     position: absolute;
 }
 
-.back-arrow {
-    width: 50px;
-    rotate: 270deg;
-    bottom: 0;
-    left: 0;
+.back-button {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
 }
 
+/* Footer styles */
+
+.footer-container {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    column-gap: 100px;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding-block: 40px;
+}
+
+.social-media-link-container {
+    display: flex;
+    column-gap: 12px;
+}
+
+.media-icon {
+    height: 23px;
+    object-fit: cover;
+}
+
+.email-address {
+    text-decoration: none;
+    color: white;
+}
