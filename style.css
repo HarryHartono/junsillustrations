@@ -47,8 +47,11 @@
 
 @media (hover:none) {
     /* touch screen only */
-    .postcard-animation-container:active .postcard-animations{
+    .postcard-animation-container:hover .postcard-animations{
         transform: rotateY(-180deg)rotateZ(-90deg);
+    }
+    .back-arrow:hover .postcard-animations{
+        transform: rotateY(180deg)rotateZ(90deg);
     }
 }
 .postcard-animation-container {
@@ -86,4 +89,18 @@
     background-repeat: no-repeat;
     background-position: center;
     transform: rotateY(180deg);
+    position: relative;
 }
+
+.back-card-img,
+.back-arrow {
+    position: absolute;
+}
+
+.back-arrow {
+    width: 50px;
+    rotate: 270deg;
+    bottom: 0;
+    left: 0;
+}
+
