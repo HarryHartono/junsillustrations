@@ -31,14 +31,6 @@ body {
     color: black;
 }
 
-.nav-option-contact {
-    background-color: lightgray;
-    border: 2px solid black;
-    font-size: 22px;
-    padding: 4px 8px;
-    margin-left: 32px;
-}
-
 .logo {
     width: 200px;
 }
@@ -74,7 +66,7 @@ body {
 }
 
 .postcard-animation-container:hover .postcard-animations{
-    transform: rotateY(-180deg)rotateZ(-90deg);
+    transform: rotateY(-180deg) rotateZ(-90deg);
 }
 
 .front-card,
@@ -111,7 +103,6 @@ body {
 }
 
 /* Footer styles */
-
 .footer-container {
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -125,6 +116,10 @@ body {
     right: 0;
     left: 0;
     padding-block: 40px;
+}
+
+.copyright {
+    white-space: none;
 }
 
 .social-media-link-container {
