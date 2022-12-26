@@ -49,57 +49,30 @@ body {
 }
 
 /* postcard style */
-.postcard-animation-container {
-    height: 500px;
-    width: 500px;
-    perspective: 1000px;
-    overflow: hidden;
-    flex-shrink: 0;
+.images-container {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../junsillustrations/images/front-page/WHALE-GIF2.gif");
+}
+.front-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-inline: 40px;
 }
 
-.postcard-animations {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    transition: transform 1500ms;
-    transform-style: preserve-3d;
+.front-card-img {
+    height: auto;
+    width: 32%;
 }
 
-.postcard-animation-container:hover .postcard-animations{
-    transform: rotateY(-180deg) rotateZ(-90deg);
-}
-
-.front-card,
-.back-card {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    backface-visibility: hidden;    
-}
-
-.front-card-img,
-.back-card-img {
-    height: 100%;
-    width: 100%;
-}
-
-
-.back-card {
-    background-repeat: no-repeat;
-    background-position: center;
-    transform: rotateY(180deg);
-    position: relative;
-}
-
-.back-card-img,
-.back-arrow {
-    position: absolute;
-}
-
-.back-button {
-    width: 20px;
-    height: 20px;
-    border: 1px solid black;
+.whale-gif-img {
+    height: auto;
+    width: 60%;
 }
 
 /* Footer styles */
