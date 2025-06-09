@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Jun's Illustration</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="I am Lim Jun Hui who is passionate about continuous learning and embracing 
         diverse perspectives, I'm always seeking the next source of inspiration. Join me on this creative
         journey, where growth never stops.">
@@ -17,35 +18,19 @@
                 <img class="logo" src="images/logo.png">
             </div> 
             <div class="right-side">
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                </button>
                 <nav class="navigation-bar">
                     <a class="nav-option-link" href="index.html">
                         <div class="nav-option">ILLUSTRATION</div>
                     </a>
-                    <a class="nav-option-link" href="index.html">
+                    <a class="nav-option-link" href="design.html">
                         <div class="nav-option">DESIGN</div>
                     </a>
                     <a class="nav-option-link" href="index.html">
                         <div class="nav-option">ABOUT</div>
                     </a>
-                    <div class="social-media-links">
-                        <div class="social-media-link-container">
-                            <a href="https://www.instagram.com/junartroom/" target="_blank">
-                                <img class="media-icon-top" src="images/icons/instagram-icon-footer.png">
-                            </a>
-                            <a href="https://twitter.com/junartroom" target="_blank">
-                                <img class="media-icon-top" src="images/icons/twitter_bird_icon-footer.png">
-                            </a>
-                            <a href="https://www.behance.net/junsillustration/" target="_blank">
-                                <img class="media-icon-top" src="images/icons/behance-icon-footer.png">
-                            </a>
-                            <a href="https://www.linkedin.com/in/lim-jun-hui-371b97156/" target="_blank">
-                                <img class="media-icon-top" src="images/icons/linkedin-footer.png">
-                            </a>
-                            <a href="mailto:jun.jhui25@gmail.com">
-                                <img class="media-icon-top" src="images/icons/mail-icon-footer.png">
-                            </a>
-                        </div>
-                    </div>
                 </nav>
             </div>
         </header>
@@ -75,24 +60,46 @@
                 <div class="social-media-links">
                     <div class="social-media-link-container">
                         <a href="https://www.instagram.com/junartroom/" target="_blank">
-                            <img class="media-icon" src="images/icons/instagram-icon-footer.png">
+                            <img class="media-icon" src="images/icons/instagram-icon-footer.png" alt="Instagram">
                         </a>
                         <a href="https://twitter.com/junartroom" target="_blank">
-                            <img class="media-icon" src="images/icons/twitter_bird_icon-footer.png">
+                            <img class="media-icon" src="images/icons/twitter_bird_icon-footer.png" alt="Twitter">
                         </a>
                         <a href="https://www.behance.net/junsillustration/" target="_blank">
-                            <img class="media-icon" src="images/icons/behance-icon-footer.png">
+                            <img class="media-icon" src="images/icons/behance-icon-footer.png" alt="Behance">
                         </a>
                         <a href="https://www.linkedin.com/in/lim-jun-hui-371b97156/" target="_blank">
-                            <img class="media-icon" src="images/icons/linkedin-footer.png">
+                            <img class="media-icon" src="images/icons/linkedin-footer.png" alt="LinkedIn">
                         </a>
                         <a href="mailto:jun.jhui25@gmail.com">
-                            <img class="media-icon" src="images/icons/mail-icon-footer.png">
+                            <img class="media-icon" src="images/icons/mail-icon-footer.png" alt="Email">
                         </a>
                     </div>
                 </div>
                 <a class="email-address" href="mailto:jun.jhui25@gmail.com">jun.jhui25@gmail.com</a>
             </div>
         </footer>
+
+        <script>
+            // Mobile menu functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                const menuToggle = document.querySelector('.menu-toggle');
+                const header = document.querySelector('.header');
+                const nav = document.querySelector('.navigation-bar');
+
+                menuToggle.addEventListener('click', function() {
+                    header.classList.toggle('menu-open');
+                    document.body.classList.toggle('menu-is-open');
+                });
+
+                // Close menu when clicking a link
+                nav.addEventListener('click', function(e) {
+                    if (e.target.closest('.nav-option-link')) {
+                        header.classList.remove('menu-open');
+                        document.body.classList.remove('menu-is-open');
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
