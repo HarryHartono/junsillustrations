@@ -79,24 +79,30 @@
                             </div>
                         </div>
                     </div>
-                </section>
-
-                <section class="astronaut-section">
+                </section>                <section class="astronaut-section">
                     <div class="project-overview">
+                        <div class="slideshow-container">
+                            <div class="slides">
+                                <div class="slide">
+                                    <img src="images/astronaut/Final FLAT.png" alt="Astronaut Collection Flat Layout">
+                                </div>
+                                <div class="slide">
+                                    <img src="images/astronaut/Final GIFT.png" alt="Astronaut Gift Set">
+                                </div>
+                                <div class="slide">
+                                    <img src="images/astronaut/GC.png" alt="Greeting Cards">
+                                </div>
+                                <div class="slide">
+                                    <img src="images/astronaut/notepad card.png" alt="Notepad Design">
+                                </div>
+                            </div>
+                            <button class="slide-nav prev" aria-label="Previous slide">&lt;</button>
+                            <button class="slide-nav next" aria-label="Next slide">&gt;</button>
+                        </div>
                         <div class="project-description">
                             <h2>Astronaut Gift Collection</h2>
                             <p>An imaginative stationery collection that takes you on a journey beyond the stars. This complete gift set was crafted as an entry for UK Greetings, showcasing a playful blend of cosmic wonder and practical design.</p>
                             <p>While this project didn't secure a win in the competition, it represents a creative exploration of space-themed design, featuring a cohesive collection of greeting cards, notepads, and gift packaging. The design captures the whimsy of space exploration while maintaining a sophisticated and commercially viable aesthetic.</p>
-                        </div>
-                        <div class="slideshow-container">
-                            <div class="slides">
-                                <img src="images/astronaut/Final FLAT.png" alt="Astronaut Collection Flat Layout" class="slide">
-                                <img src="images/astronaut/Final GIFT.png" alt="Astronaut Gift Set" class="slide">
-                                <img src="images/astronaut/GC.png" alt="Greeting Cards" class="slide">
-                                <img src="images/astronaut/notepad card.png" alt="Notepad Design" class="slide">
-                            </div>
-                            <button class="slide-nav prev" aria-label="Previous slide">&lt;</button>
-                            <button class="slide-nav next" aria-label="Next slide">&gt;</button>
                         </div>
                     </div>
                 </section>
@@ -160,37 +166,87 @@
                         item.classList.remove('expanded');
                     });
                 });
-            });
-
-            // Slideshow functionality
+            });            // Slideshow functionality
             document.addEventListener('DOMContentLoaded', function() {
                 const slideshow = document.querySelector('.slides');
                 const slides = document.querySelectorAll('.slide');
                 const prevButton = document.querySelector('.prev');
                 const nextButton = document.querySelector('.next');
                 let currentSlide = 0;
+                let isAnimating = false;
                 let autoplayInterval;
 
-                function showSlide(index) {
+                // Clone first and last slides for smooth infinite loop
+                const firstClone = slides[0].cloneNode(true);
+                const lastClone = slides[slides.length - 1].cloneNode(true);
+                slideshow.appendChild(firstClone);
+                slideshow.insertBefore(lastClone, slides[0]);
+
+                // Adjust initial position to show first real slide
+                slideshow.style.transform = `translateX(-100%)`;
+
+                function showSlide(index, smooth = true) {
+                    if (isAnimating) return;
+                    isAnimating = true;
+
+                    if (smooth) {
+                        slideshow.style.transition = 'transform 0.5s ease';
+                    } else {
+                        slideshow.style.transition = 'none';
+                    }
+
                     currentSlide = index;
-                    slideshow.style.transform = `translateX(-${index * 100}%)`;
+                    slideshow.style.transform = `translateX(-${(index + 1) * 100}%)`;
+
+                    // Handle infinite loop transitions
+                    if (index === slides.length) {
+                        setTimeout(() => {
+                            slideshow.style.transition = 'none';
+                            currentSlide = 0;
+                            slideshow.style.transform = `translateX(-100%)`;
+                            setTimeout(() => {
+                                slideshow.style.transition = 'transform 0.5s ease';
+                                isAnimating = false;
+                            }, 10);
+                        }, 500);
+                    } else if (index === -1) {
+                        setTimeout(() => {
+                            slideshow.style.transition = 'none';
+                            currentSlide = slides.length - 1;
+                            slideshow.style.transform = `translateX(-${slides.length * 100}%)`;
+                            setTimeout(() => {
+                                slideshow.style.transition = 'transform 0.5s ease';
+                                isAnimating = false;
+                            }, 10);
+                        }, 500);
+                    } else {
+                        setTimeout(() => {
+                            isAnimating = false;
+                        }, 500);
+                    }
                 }
 
                 function nextSlide() {
-                    showSlide((currentSlide + 1) % slides.length);
+                    if (!isAnimating) {
+                        showSlide(currentSlide + 1);
+                    }
                 }
 
                 function prevSlide() {
-                    showSlide((currentSlide - 1 + slides.length) % slides.length);
+                    if (!isAnimating) {
+                        showSlide(currentSlide - 1);
+                    }
                 }
 
                 // Event listeners for navigation
                 prevButton.addEventListener('click', () => {
                     prevSlide();
+                    resetAutoplay();
                 });
 
                 nextButton.addEventListener('click', () => {
                     nextSlide();
+                    resetAutoplay();
                 });
 
                 // Autoplay functionality
@@ -203,17 +259,21 @@
                     startAutoplay();
                 }
 
+                // Handle transition end
+                slideshow.addEventListener('transitionend', () => {
+                    isAnimating = false;
+                });
+
                 // Start autoplay
                 startAutoplay();
-            });
-
-            // Mobile menu functionality
+            });            // Mobile menu functionality
             document.addEventListener('DOMContentLoaded', function() {
                 const menuToggle = document.querySelector('.menu-toggle');
                 const header = document.querySelector('.header');
                 const nav = document.querySelector('.navigation-bar');
 
-                menuToggle.addEventListener('click', function() {
+                menuToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
                     header.classList.toggle('menu-open');
                     document.body.classList.toggle('menu-is-open');
                 });
