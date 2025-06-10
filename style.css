@@ -677,48 +677,6 @@ html {
     right: 10px;
 }
 
-/* Pagination Dots */
-.dots-container {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 25px;
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.dot {
-    width: 30px;
-    height: 2px;
-    background: rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    border: none;
-    padding: 0;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.dot::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: #b39b8d;
-    transition: width 0.3s ease;
-}
-
-.dot:hover {
-    background: rgba(0, 0, 0, 0.3);
-}
-
-.dot.active::after {
-    width: 100%;
-}
-
 @media screen and (max-width: 768px) {
     .slideshow-container {
         margin: 20px auto;
@@ -728,15 +686,5 @@ html {
         padding: 8px 12px;
         font-size: 16px;
         opacity: 1;
-    }
-
-    .dots-container {
-        gap: 8px;
-        margin-top: 20px;
-        bottom: -35px;
-    }
-
-    .dot {
-        width: 20px;
     }
 }

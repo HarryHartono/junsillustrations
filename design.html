@@ -97,12 +97,6 @@
                             </div>
                             <button class="slide-nav prev" aria-label="Previous slide">&lt;</button>
                             <button class="slide-nav next" aria-label="Next slide">&gt;</button>
-                            <div class="dots-container">
-                                <button class="dot active" aria-label="Go to slide 1"></button>
-                                <button class="dot" aria-label="Go to slide 2"></button>
-                                <button class="dot" aria-label="Go to slide 3"></button>
-                                <button class="dot" aria-label="Go to slide 4"></button>
-                            </div>
                         </div>
                     </div>
                 </section>
@@ -174,20 +168,12 @@
                 const slides = document.querySelectorAll('.slide');
                 const prevButton = document.querySelector('.prev');
                 const nextButton = document.querySelector('.next');
-                const dots = document.querySelectorAll('.dot');
                 let currentSlide = 0;
                 let autoplayInterval;
-
-                function updateDots(index) {
-                    dots.forEach((dot, i) => {
-                        dot.classList.toggle('active', i === index);
-                    });
-                }
 
                 function showSlide(index) {
                     currentSlide = index;
                     slideshow.style.transform = `translateX(-${index * 100}%)`;
-                    updateDots(index);
                 }
 
                 function nextSlide() {
@@ -201,20 +187,10 @@
                 // Event listeners for navigation
                 prevButton.addEventListener('click', () => {
                     prevSlide();
-                    resetAutoplay();
                 });
 
                 nextButton.addEventListener('click', () => {
                     nextSlide();
-                    resetAutoplay();
-                });
-
-                // Add click handlers for dots
-                dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => {
-                        showSlide(index);
-                        resetAutoplay();
-                    });
                 });
 
                 // Autoplay functionality
@@ -229,11 +205,6 @@
 
                 // Start autoplay
                 startAutoplay();
-
-                // Pause autoplay when hovering over the slideshow
-                const slideshowContainer = document.querySelector('.slideshow-container');
-                slideshowContainer.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
-                slideshowContainer.addEventListener('mouseleave', startAutoplay);
             });
 
             // Mobile menu functionality
