@@ -145,7 +145,7 @@ body.menu-is-open {
     max-width: 1200px;
     margin: 0 auto;
     gap: 40px;
-    padding: 0 20px;
+    padding: 0 40px; /* Added padding */
     box-sizing: border-box;
 }
 
@@ -400,7 +400,7 @@ body.menu-is-open {
     overflow: hidden;
     box-sizing: border-box;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 12px; /* Added corner radius */
 }
 
 .slides {
@@ -418,7 +418,7 @@ body.menu-is-open {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px;
+    border-radius: 12px; /* Added corner radius to match container */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
