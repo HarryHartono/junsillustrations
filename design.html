@@ -8,32 +8,9 @@
         <link rel="shortcut icon" type="image/x-icon" href="images/logo circle copy.png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-    </head>
-    <body>        <header class="header">
-            <div class="header-container">
-                <div class="left-side">
-                    <a href="index.html" class="logo-link">
-                        <img class="logo" src="images/logo.png">
-                    </a>
-                </div> 
-                <div class="right-side">
-                    <button class="menu-toggle" aria-label="Toggle menu">
-                        <span class="hamburger"></span>
-                    </button>
-                    <nav class="navigation-bar">
-                        <a class="nav-option-link" href="index.html">
-                            <div class="nav-option">ILLUSTRATION</div>
-                        </a>
-                        <a class="nav-option-link" href="design.html">
-                            <div class="nav-option">DESIGN</div>
-                        </a>
-                    <a class="nav-option-link" href="about.html">
-                        <div class="nav-option">ABOUT</div>
-                    </a>
-                </nav>
-            </div>
-        </header>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">    </head>
+    <body>
+        <div id="header"></div>
 
         <main class="main-body">
             <div class="images-container">
@@ -47,38 +24,41 @@
                             <p>A whimsical journey through the traditional Chinese calendar, illustrated through the eyes of a charming cow. This postcard collection brings to life the ancient wisdom of the 24 solar terms, each capturing the subtle changes in nature throughout the year.</p>
                             <p>The series combines traditional Chinese cultural elements with contemporary design, creating a bridge between past and present. Each illustration tells a story of seasonal transformation, agricultural wisdom, and natural phenomena, making these complex concepts accessible and engaging.</p>
                         </div>
-                    </div>
-                    
-                    <div class="postcard-samples">
+                    </div>                    <div class="postcard-samples">
                         <h3>Featured Postcards</h3>
-                        <div class="postcard-grid">
-                            <div class="postcard-item">
-                                <div class="postcard-front">
-                                    <img src="images/postcards/frost+descent.jpg" alt="Frost Descent Solar Term">
-                                </div>
-                                <div class="postcard-back">
-                                    <img src="images/postcards/postcard back fd.jpg" alt="Postcard Back Design">
-                                    <button class="close-button" aria-label="Close">&times;</button>
-                                </div>
-                            </div>
-                            <div class="postcard-item">
-                                <div class="postcard-front">
-                                    <img src="images/postcards/grain full.jpg" alt="Grain Full Solar Term">
-                                </div>
-                                <div class="postcard-back">
-                                    <img src="images/postcards/postcard back gf.jpg" alt="Postcard Back Design">
-                                    <button class="close-button" aria-label="Close">&times;</button>
+                        <div class="postcard-grid" id="postcardGrid">                            <div class="postcard-item">
+                                <div class="flipper">
+                                    <div class="postcard-front">
+                                        <img src="images/postcards/frost+descent.jpg" alt="Frost Descent Solar Term">
+                                    </div>
+                                    <div class="postcard-back">
+                                        <img src="images/postcards/postcard back fd.jpg" alt="Postcard Back Design">
+                                    </div>
                                 </div>
                             </div>
                             <div class="postcard-item">
-                                <div class="postcard-front">
-                                    <img src="images/postcards/rainwater+.jpg" alt="Rain Water Solar Term">
-                                </div>
-                                <div class="postcard-back">
-                                    <img src="images/postcards/postcard back rw.jpg" alt="Postcard Back Design">
-                                    <button class="close-button" aria-label="Close">&times;</button>
+                                <div class="flipper">
+                                    <div class="postcard-front">
+                                        <img src="images/postcards/grain full.jpg" alt="Grain Full Solar Term">
+                                    </div>
+                                    <div class="postcard-back">
+                                        <img src="images/postcards/postcard back gf.jpg" alt="Postcard Back Design">
+                                    </div>
                                 </div>
                             </div>
+                            <div class="postcard-item">
+                                <div class="flipper">
+                                    <div class="postcard-front">
+                                        <img src="images/postcards/rainwater+.jpg" alt="Rain Water Solar Term">
+                                    </div>
+                                    <div class="postcard-back">
+                                        <img src="images/postcards/postcard back rw.jpg" alt="Postcard Back Design">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        <div class="postcard-nav">
+                            <button class="scroll-btn prev-btn" aria-label="Previous postcard">&lt;</button>
+                            <button class="scroll-btn next-btn" aria-label="Next postcard">&gt;</button>
                         </div>
                     </div>
                 </section>                <section class="astronaut-section">
@@ -107,66 +87,76 @@
                             <p>While this project didn't secure a win in the competition, it represents a creative exploration of space-themed design, featuring a cohesive collection of greeting cards, notepads, and gift packaging. The design captures the whimsy of space exploration while maintaining a sophisticated and commercially viable aesthetic.</p>
                         </div>
                     </div>
-                </section>
-            </div>  
+                </section>            </div>  
         </main>
-
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="copyright">&#169; Lim Jun Hui 2025</div>
-                <div class="social-media-links">
-                    <div class="social-media-link-container">
-                        <a href="https://www.instagram.com/junartroom/" target="_blank">
-                            <img class="media-icon" src="images/icons/instagram-icon-footer.png" alt="Instagram">
-                        </a>
-                        <a href="https://twitter.com/junartroom" target="_blank">
-                            <img class="media-icon" src="images/icons/twitter_bird_icon-footer.png" alt="Twitter">
-                        </a>
-                        <a href="https://www.behance.net/junsillustration/" target="_blank">
-                            <img class="media-icon" src="images/icons/behance-icon-footer.png" alt="Behance">
-                        </a>
-                        <a href="https://www.linkedin.com/in/lim-jun-hui-371b97156/" target="_blank">
-                            <img class="media-icon" src="images/icons/linkedin-footer.png" alt="LinkedIn">
-                        </a>
-                        <a href="mailto:jun.jhui25@gmail.com">
-                            <img class="media-icon" src="images/icons/mail-icon-footer.png" alt="Email">
-                        </a>
-                    </div>
-                </div>
-                <a class="email-address" href="mailto:jun.jhui25@gmail.com">jun.jhui25@gmail.com</a>
-            </div>
-        </footer>
+        <div id="footer"></div>
 
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const postcardItems = document.querySelectorAll('.postcard-item');
+                const postcardGrid = document.getElementById('postcardGrid');
+                const overlay = document.querySelector('.overlay');
+                const prevBtn = document.querySelector('.prev-btn');
+                const nextBtn = document.querySelector('.next-btn');
                 
+                // Handle postcard horizontal scrolling
+                nextBtn.addEventListener('click', () => {
+                    const scrollAmount = postcardGrid.offsetWidth * 0.33; // One third of viewport
+                    postcardGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+                
+                prevBtn.addEventListener('click', () => {
+                    const scrollAmount = postcardGrid.offsetWidth * 0.33; // One third of viewport
+                    postcardGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+
+                // Handle postcard click and modal display
                 postcardItems.forEach(item => {
                     const front = item.querySelector('.postcard-front');
                     const back = item.querySelector('.postcard-back');
-                    const closeButton = item.querySelector('.close-button');
+                    const closeButton = back.querySelector('.close-button');
 
                     front.addEventListener('click', () => {
-                        // Remove expanded class from any other items
-                        postcardItems.forEach(otherItem => {
-                            if (otherItem !== item && otherItem.classList.contains('expanded')) {
-                                otherItem.classList.remove('expanded');
+                        // Hide any other active postcard backs
+                        document.querySelectorAll('.postcard-back.active').forEach(activeBack => {
+                            if (activeBack !== back) {
+                                activeBack.classList.remove('active');
                             }
                         });
-                        
-                        // Add expanded class to clicked item
-                        item.classList.add('expanded');
-                        
-                        // Scroll the expanded item into view
-                        setTimeout(() => {
-                            item.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        }, 100); // Small delay to allow for expansion animation
+
+                        // Show this postcard's back and the overlay
+                        back.classList.add('active');
+                        overlay.classList.add('active');
+                        document.body.classList.add('modal-open');
                     });
 
+                    // Close on close button click
                     closeButton.addEventListener('click', (e) => {
                         e.stopPropagation();
-                        item.classList.remove('expanded');
+                        back.classList.remove('active');
+                        overlay.classList.remove('active');
+                        document.body.classList.remove('modal-open');
                     });
+                });
+
+                // Close on overlay click
+                overlay.addEventListener('click', () => {
+                    document.querySelectorAll('.postcard-back.active').forEach(back => {
+                        back.classList.remove('active');
+                    });
+                    overlay.classList.remove('active');
+                    document.body.classList.remove('modal-open');
+                });
+
+                // Close on escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        document.querySelectorAll('.postcard-back.active').forEach(back => {
+                            back.classList.remove('active');
+                        });
+                        overlay.classList.remove('active');
+                        document.body.classList.remove('modal-open');
+                    }
                 });
             });            // Slideshow functionality
             document.addEventListener('DOMContentLoaded', function() {
@@ -264,30 +254,71 @@
                 // Handle transition end
                 slideshow.addEventListener('transitionend', () => {
                     isAnimating = false;
-                });
-
-                // Start autoplay
+                });                // Start autoplay
                 startAutoplay();
-            });            // Mobile menu functionality
+            });
+
             document.addEventListener('DOMContentLoaded', function() {
-                const menuToggle = document.querySelector('.menu-toggle');
-                const header = document.querySelector('.header');
-                const nav = document.querySelector('.navigation-bar');
-
-                menuToggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    header.classList.toggle('menu-open');
-                    document.body.classList.toggle('menu-is-open');
-                });
-
-                // Close menu when clicking a link
-                nav.addEventListener('click', function(e) {
-                    if (e.target.closest('.nav-option-link')) {
-                        header.classList.remove('menu-open');
-                        document.body.classList.remove('menu-is-open');
+                const postcardGrid = document.getElementById('postcardGrid');
+                const postcardItems = document.querySelectorAll('.postcard-item');
+                const prevBtn = document.querySelector('.prev-btn');
+                const nextBtn = document.querySelector('.next-btn');
+                let currentIndex = 0;
+                
+                // Function to update navigation buttons
+                function updateNavigationButtons() {
+                    prevBtn.disabled = currentIndex === 0;
+                    nextBtn.disabled = currentIndex === postcardItems.length - 1;
+                }
+                
+                // Show only the first postcard initially
+                function showPostcard(index) {
+                    postcardGrid.scrollTo({
+                        left: postcardGrid.offsetWidth * index,
+                        behavior: 'smooth'
+                    });
+                    currentIndex = index;
+                    
+                    // Reset any flipped cards when navigating
+                    postcardItems.forEach(item => {
+                        item.classList.remove('flipped');
+                    });
+                    
+                    // Update navigation buttons
+                    updateNavigationButtons();
+                }
+                
+                // Handle postcard navigation
+                nextBtn.addEventListener('click', () => {
+                    if (currentIndex < postcardItems.length - 1) {
+                        showPostcard(currentIndex + 1);
                     }
                 });
+                
+                prevBtn.addEventListener('click', () => {
+                    if (currentIndex > 0) {
+                        showPostcard(currentIndex - 1);
+                    }
+                });
+
+                // Handle card flipping
+                postcardItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        // Remove flipped class from all other cards
+                        postcardItems.forEach(otherItem => {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('flipped');
+                            }
+                        });
+                        // Toggle flipped class on clicked card
+                        item.classList.toggle('flipped');
+                    });
+                });
+
+                // Show first postcard initially and set up navigation
+                showPostcard(0);
             });
         </script>
+        <script src="js/components.js"></script>
     </body>
-</html> 
+</html>
