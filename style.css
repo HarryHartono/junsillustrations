@@ -154,7 +154,8 @@ body.menu-is-open {
     align-items: center;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0px auto;
+    margin-top: 30px;
     gap: 40px;
     padding: 0 20px;
     box-sizing: border-box;
@@ -1186,10 +1187,9 @@ body.menu-is-open {
 @media screen and (max-width: 640px) {
     .pinterest-grid {
         column-count: 2;
-        padding: 16px;
+        padding: 12px;
     }
 
-    /* Reset hover states for mobile */
     .pin-item:hover {
         transform: none;
     }
@@ -1198,38 +1198,8 @@ body.menu-is-open {
         transform: none;
     }
 
-    .pin-item:hover .pin-content {
-        opacity: 0;
-    }
-
-    /* Add touch states */
-    .pin-item.touched .pin-content {
-        opacity: 1;
-        background: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.7) 0%,
-            rgba(0, 0, 0, 0.5) 50%,
-            rgba(0, 0, 0, 0.1) 100%
-        );
-    }
-
+    /* Hide text content completely on mobile */
     .pin-content {
-        padding: 16px;
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    .pin-item.touched .pin-content {
-        pointer-events: auto;
-    }
-
-    .pin-content h3 {
-        font-size: 12px;
-        margin-bottom: 8px;
-    }
-
-    .pin-content p {
-        font-size: 9px;
-        line-height: 1.4;
+        display: none;
     }
 }
