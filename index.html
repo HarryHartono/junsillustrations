@@ -168,8 +168,49 @@
                     </a>
                 </div>
             </div>
-        </main>        <div id="footer"></div>          <script>
-            document.addEventListener('DOMContentLoaded', function() {
+        </main>        <div id="footer"></div>        <script>            document.addEventListener('DOMContentLoaded', function() {
+                // Mobile touch interaction for pin items
+                const pinItems = document.querySelectorAll('.pin-item');
+                
+                pinItems.forEach(item => {
+                    const link = item.querySelector('.pin-link');
+                    let isFirstTap = true;
+
+                    item.addEventListener('touchstart', function(e) {
+                        if (window.innerWidth > 640) return; // Only apply on mobile
+
+                        if (isFirstTap) {
+                            e.preventDefault(); // Prevent navigation on first tap
+                            
+                            // Remove touched class from all other items
+                            pinItems.forEach(otherItem => {
+                                if (otherItem !== item) {
+                                    otherItem.classList.remove('touched');
+                                }
+                            });
+                            
+                            item.classList.add('touched');
+                            isFirstTap = false;
+
+                            // Reset first tap after a delay if not tapped again
+                            setTimeout(() => {
+                                isFirstTap = true;
+                                item.classList.remove('touched');
+                            }, 3000);
+                        }
+                    });
+                });
+
+                // Remove touched state when tapping elsewhere
+                document.addEventListener('touchstart', function(e) {
+                    if (!e.target.closest('.pin-item')) {
+                        pinItems.forEach(item => {
+                            item.classList.remove('touched');
+                        });
+                    }
+                });
+
+                // Menu functionality
                 const menuToggle = document.querySelector('.menu-toggle');
                 const header = document.querySelector('.header');
                 const nav = document.querySelector('.navigation-bar');
